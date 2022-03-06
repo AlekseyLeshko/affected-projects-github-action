@@ -1,11 +1,14 @@
-name: 'Your name here'
-description: 'Provide a description here'
-author: 'Your name or organization here'
+name: 'Affected projects'
+description: 'Get affected projects in a monorepo by git'
+author: 'AlekseyLeshko <alekseyleshko@gmail.com>'
 inputs:
-  milliseconds: # change this
+  workspaces:
     required: true
-    description: 'input description here'
-    default: 'default value if applicable'
+    description: 'Enter workspaces'
+  filter_pattern:
+    description: 'Filter projects by pattern'
+  # default_projects:
+    # description: 'Enter default project array in your workspaces'
 runs:
   using: 'node16'
   main: 'dist/index.js'
