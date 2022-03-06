@@ -1,19 +1,27 @@
 import * as core from '@actions/core'
-import {wait} from './wait'
 
 async function run(): Promise<void> {
   try {
-    const ms: string = core.getInput('milliseconds')
-    core.debug(`Waiting ${ms} milliseconds ...`) // debug is only output if you set the secret `ACTIONS_STEP_DEBUG` to true
+    const workspaces: string = core.getInput('workspaces')
+    const defaultProjects: string = core.getInput('default_projects')
+    const filterPattern: string = core.getInput('filter_pattern')
 
+    // debug is only output if you set the secret `ACTIONS_STEP_DEBUG` to true
     core.debug(new Date().toTimeString())
-    await wait(parseInt(ms, 10))
+    core.debug(JSON.stringify({workspaces, defaultProjects, filterPattern}))
+    const affectedProject: string[] = []
     core.debug(new Date().toTimeString())
 
-    core.setOutput('time', new Date().toTimeString())
+    core.setOutput('affected_project', affectedProject)
   } catch (error) {
     if (error instanceof Error) core.setFailed(error.message)
   }
 }
 
-run()
+export default run
+
+// Don't auto-execute in the test environment
+// istanbul ignore next
+if (process.env['NODE_ENV'] !== 'test') {
+  run()
+}
