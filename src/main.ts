@@ -9,10 +9,10 @@ async function run(): Promise<void> {
     // debug is only output if you set the secret `ACTIONS_STEP_DEBUG` to true
     core.debug(new Date().toTimeString())
     core.debug(JSON.stringify({workspaces, defaultProjects, filterPattern}))
-    const affectedProject: string[] = []
+    const affectedWorkspacesOutput: string[] = []
     core.debug(new Date().toTimeString())
 
-    core.setOutput('affected_project', affectedProject)
+    core.setOutput('affected_workspaces', affectedWorkspacesOutput)
   } catch (error) {
     if (error instanceof Error) core.setFailed(error.message)
   }

@@ -9,6 +9,9 @@ inputs:
     description: 'Filter projects by pattern'
   # default_projects:
     # description: 'Enter default project array in your workspaces'
+outputs:
+  affected_workspaces:
+    description: 'Array of affected workspaces in a monorepo'
 runs:
   using: 'node16'
   main: 'dist/index.js'
