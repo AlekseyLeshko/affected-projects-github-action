@@ -1,18 +1,22 @@
 import * as core from '@actions/core'
+import {getAffectedWorkspaces} from 'affected-workspaces'
+
+import {getDefaultWorkspaces} from './get-data-from-input'
 
 async function run(): Promise<void> {
   try {
-    const workspaces: string = core.getInput('workspaces')
-    const defaultProjects: string = core.getInput('default_projects')
-    const filterPattern: string = core.getInput('filter_pattern')
+    const workspaces = JSON.parse(core.getInput('workspaces') || '[]')
+    const defaultWorkspaces = getDefaultWorkspaces()
+    const filterPattern = core.getInput('filter_pattern')
+    core.debug(JSON.stringify({workspaces, defaultWorkspaces, filterPattern}))
 
-    // debug is only output if you set the secret `ACTIONS_STEP_DEBUG` to true
-    core.debug(new Date().toTimeString())
-    core.debug(JSON.stringify({workspaces, defaultProjects, filterPattern}))
-    const affectedWorkspacesOutput: string[] = []
-    core.debug(new Date().toTimeString())
+    const affectedWorkspaces = getAffectedWorkspaces(
+      workspaces,
+      defaultWorkspaces,
+      filterPattern
+    )
 
-    core.setOutput('affected_workspaces', affectedWorkspacesOutput)
+    core.setOutput('affected_workspaces', JSON.stringify(affectedWorkspaces))
   } catch (error) {
     if (error instanceof Error) core.setFailed(error.message)
   }
