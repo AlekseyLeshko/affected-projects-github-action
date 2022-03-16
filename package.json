@@ -1,8 +1,8 @@
 {
-  "name": "affected-projects",
+  "name": "affected-workspaces-github-action",
   "version": "0.1.0",
   "private": true,
-  "description": "Get affected projects in a monorepo by git",
+  "description": "Github action to get affected workspaces in a monorepo by git",
   "main": "lib/main.js",
   "author": "",
   "scripts": {
@@ -22,7 +22,11 @@
   "keywords": [
     "actions",
     "node",
-    "setup"
+    "git",
+    "monorepo",
+    "workspaces",
+    "affected",
+    "tool"
   ],
   "license": "MIT",
   "engines": {
