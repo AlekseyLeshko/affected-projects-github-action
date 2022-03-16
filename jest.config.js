@@ -4,10 +4,10 @@ module.exports = {
   coverageReporters: ['html', 'text-summary'],
   coverageThreshold: {
     global: {
-      branches: 71,
+      branches: 100,
       functions: 100,
-      lines: 76,
-      statements: 73,
+      lines: 100,
+      statements: 100,
     },
   },
   testEnvironment: 'node',
