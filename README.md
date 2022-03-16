@@ -1,10 +1,9 @@
 <p align="center">
-  <a href="https://github.com/actions/typescript-action/actions"><img alt="typescript-action status" src="https://github.com/actions/typescript-action/workflows/build-test/badge.svg"></a>
+  <a href="https://github.com/AlekseyLeshko/affected-workspaces-github-action/actions"><img alt="affected-workspaces-github-action status" src="https://github.com/AlekseyLeshko/affected-workspaces-github-action/actions/workflows/check-dist.yml/badge.svg"></a>
 </p>
 
 # Github action to get affected workspaces in a monorepo by git
 This action is a wrapper of [affected-workspaces npm module](https://github.com/AlekseyLeshko/affected-workspaces).
-If you are new, there's also a simpler introduction.  See the [Hello World JavaScript Action](https://github.com/actions/hello-world-javascript-action)
 
 ## Usage
 You should use directories that are part of the workspaces in package.json.
