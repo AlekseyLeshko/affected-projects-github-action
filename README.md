@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://github.com/AlekseyLeshko/affected-workspaces-github-action/actions"><img alt="affected-workspaces-github-action status" src="https://github.com/AlekseyLeshko/affected-workspaces-github-action/actions/workflows/check-dist.yml/badge.svg"></a>
+  <a href="https://github.com/AlekseyLeshko/affected-workspaces-github-action/actions"><img alt="affected-workspaces-github-action status" src="https://github.com/AlekseyLeshko/affected-workspaces-github-action/actions/workflows/test.yml/badge.svg"></a>
 </p>
 
 # Github action to get affected workspaces in a monorepo by git
