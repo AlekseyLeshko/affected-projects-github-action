@@ -5,10 +5,14 @@ inputs:
   workspaces:
     required: true
     description: 'Enter workspaces'
+  default_workspaces:
+    description: 'Enter default workspaces'
   filter_pattern:
     description: 'Filter projects by pattern'
-  # default_projects:
-    # description: 'Enter default project array in your workspaces'
+    default: '**'
+outputs:
+  affected_workspaces:
+    description: 'Array of affected workspaces in a monorepo'
 runs:
   using: 'node16'
   main: 'dist/index.js'
