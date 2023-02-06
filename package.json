@@ -34,7 +34,7 @@
     "npm": "8.5.1"
   },
   "dependencies": {
-    "@actions/core": "^1.6.0",
+    "@actions/core": "^1.10.0",
     "affected-workspaces": "^0.2.0"
   },
   "devDependencies": {
